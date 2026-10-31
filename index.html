@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EmailHandler</title>
-    <meta name="description" content="A desktop app that cleans up your mailbox: tags, unsubscribes and safe-to-delete suggestions. Gmail and Outlook." />
+    <title>EmailHandler · Download</title>
+    <meta name="description" content="Download EmailHandler, a free desktop app that cleans up your mailbox: tags, unsubscribes and safe-to-delete suggestions. Gmail and Outlook." />
+    <link rel="icon" href="assets/icon.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,17 +13,66 @@
       <header class="top">
         <a class="brand" href="./" aria-current="page"><span class="mark" aria-hidden="true">✉️</span><span>Email<b>Handler</b></span></a>
         <nav class="links" aria-label="Site">
+          <a href="./" aria-current="page">Download</a>
+          <a href="readme.html">README</a>
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
         </nav>
       </header>
 
       <main>
+        <p><span class="badge">Version 0.1.0 · beta · October 31, 2026</span></p>
         <h1>Clean up your mailbox, one click at a time.</h1>
         <p class="lead">
-          EmailHandler is a desktop app for macOS, Windows and Linux. It sorts every email into a colored tag, finds subscriptions you can leave,
-          and suggests what is safe to delete. It works with Gmail and Outlook, and nothing changes in your mailbox until you click.
+          A free desktop app that sorts every email into a colored tag, finds subscriptions you can leave,
+          and suggests what is safe to delete. Works with Gmail and Outlook. Nothing changes in your mailbox until you click.
         </p>
+
+        <div class="downloads" id="downloads">
+          <a class="dl" data-os="mac-arm" href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-mac-apple-silicon.dmg">
+            <span class="os" aria-hidden="true">🍎</span>
+            <strong>macOS · Apple Silicon</strong>
+            <span>M1, M2, M3, M4 and later · .dmg</span>
+          </a>
+          <a class="dl" data-os="mac-intel" href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-mac-intel.dmg">
+            <span class="os" aria-hidden="true">🍎</span>
+            <strong>macOS · Intel</strong>
+            <span>Older Macs with an Intel chip · .dmg</span>
+          </a>
+          <a class="dl" data-os="windows" aria-disabled="true" tabindex="-1">
+            <span class="os" aria-hidden="true">🪟</span>
+            <strong>Windows</strong>
+            <span>Coming soon</span>
+          </a>
+          <a class="dl" data-os="linux" aria-disabled="true" tabindex="-1">
+            <span class="os" aria-hidden="true">🐧</span>
+            <strong>Linux</strong>
+            <span>Coming soon</span>
+          </a>
+        </div>
+        <p class="meta" style="margin-top: 12px">
+          Not sure which Mac you have? Apple menu → <em>About This Mac</em>: “Chip: Apple M…” means Apple Silicon.
+          · <a href="https://github.com/bydamiano/emailhandler-site/releases/latest">All files and checksums</a>
+        </p>
+
+        <section class="card">
+          <h2>Beta: invited testers only</h2>
+          <p>
+            While Google reviews the app, <strong>Gmail sign-in only works for invited testers</strong>, and Google shows
+            “Google hasn't verified this app” (click <em>Advanced → Go to EmailHandler</em>). Outlook and Hotmail accounts can sign in already.
+            Want to try it with Gmail? Write to <a href="mailto:bydamiano07@gmail.com?subject=EmailHandler%20beta">bydamiano07@gmail.com</a> with your Gmail address.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Install on macOS</h2>
+          <ol>
+            <li>Open the <code>.dmg</code> and drag <strong>EmailHandler</strong> into <strong>Applications</strong>.</li>
+            <li>Open EmailHandler. macOS says it can't verify the developer, because the app is free and not notarized by Apple. Click <strong>Done</strong>.</li>
+            <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down and click <strong>Open Anyway</strong> next to EmailHandler. You only do this once.</li>
+            <li>Click <strong>Sign in with Google</strong> or <strong>Sign in with Microsoft</strong>, then paste your TypeSafe API key (<a href="https://console.typesafe.ai/keys">get one here</a>).</li>
+          </ol>
+        </section>
 
         <div class="grid">
           <div class="feature">
@@ -49,16 +99,40 @@
 
         <section class="card">
           <h2>How it decides</h2>
-          <p>EmailHandler uses Jev, a decision model by TypeSafe, with your own TypeSafe API key. Read exactly what is sent and stored in the <a href="privacy.html">Privacy Policy</a>.</p>
+          <p>EmailHandler uses Jev, a decision model by TypeSafe, with your own TypeSafe API key. Read exactly what is sent and stored in the <a href="privacy.html">Privacy Policy</a>, or everything the app does in the <a href="readme.html">README</a>.</p>
         </section>
       </main>
 
       <footer>
         <span>© 2026 EmailHandler</span>
+        <a href="readme.html">README</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:bydamiano07@gmail.com">Contact</a>
       </footer>
     </div>
+    <script>
+      // Highlight the download that matches this computer (best effort; every button still works).
+      (async () => {
+        const ua = navigator.userAgent;
+        let os = null;
+        if (/Windows/i.test(ua)) os = 'windows';
+        else if (/Linux/i.test(ua) && !/Android/i.test(ua)) os = 'linux';
+        else if (/Mac/i.test(ua)) {
+          os = 'mac-arm';
+          try {
+            const data = await navigator.userAgentData?.getHighEntropyValues(['architecture']);
+            if (data && data.architecture === 'x86') os = 'mac-intel';
+          } catch (error) {
+            console.info('Could not read the CPU type; defaulting to Apple Silicon.', error);
+          }
+        }
+        const match = os && document.querySelector(`.dl[data-os="${os}"]:not([aria-disabled="true"])`);
+        if (match) {
+          match.classList.add('primary');
+          match.parentElement.prepend(match);
+        }
+      })();
+    </script>
   </body>
 </html>
