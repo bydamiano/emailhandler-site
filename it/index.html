@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="it" data-alt="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script src="../lang.js"></script>
+    <title>EmailHandler: pulisci la posta con l'AI, app desktop gratuita per Gmail e Outlook</title>
+    <meta
+      name="description"
+      content="EmailHandler è un'app desktop gratuita per macOS, Windows e Linux che etichetta ogni email, ti disiscrive in blocco e trova cosa puoi eliminare. Funziona con Gmail e Outlook. La tua posta resta sul tuo computer."
+    />
+    <link rel="canonical" href="https://bydamiano.github.io/emailhandler-site/it/" />
+    <link rel="alternate" hreflang="en" href="https://bydamiano.github.io/emailhandler-site/" />
+    <link rel="alternate" hreflang="it" href="https://bydamiano.github.io/emailhandler-site/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://bydamiano.github.io/emailhandler-site/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Damiano Maka" />
+    <meta name="application-name" content="EmailHandler" />
+    <meta name="theme-color" content="#fff8ef" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EmailHandler" />
+    <meta property="og:title" content="EmailHandler: pulisci la posta. Trasformala in un gioco." />
+    <meta
+      property="og:description"
+      content="L'AI etichetta ogni email, ti disiscrive in blocco e trova cosa puoi eliminare. Un'app desktop gratuita per Gmail e Outlook."
+    />
+    <meta property="og:url" content="https://bydamiano.github.io/emailhandler-site/it/" />
+    <meta property="og:image" content="https://bydamiano.github.io/emailhandler-site/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="EmailHandler: pulisci la posta, trasformala in un gioco. Una finestra dell'app con email etichettate." />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EmailHandler: pulisci la posta. Trasformala in un gioco." />
+    <meta
+      name="twitter:description"
+      content="L'AI etichetta ogni email, ti disiscrive in blocco e trova cosa puoi eliminare. Gratis per macOS, Windows e Linux."
+    />
+    <meta name="twitter:image" content="https://bydamiano.github.io/emailhandler-site/assets/og-image.png" />
+
+    <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist+Mono:wght@400..700&family=Geist:wght@400..700&display=swap"
+    />
+    <link rel="stylesheet" href="../style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "EmailHandler",
+        "description": "App desktop gratuita che etichetta ogni email, ti disiscrive in blocco e trova cosa puoi eliminare. Funziona con Gmail e Outlook; la posta resta sul tuo computer.",
+        "url": "https://bydamiano.github.io/emailhandler-site/it/",
+        "inLanguage": "it",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "macOS, Windows, Linux",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-10-31",
+        "downloadUrl": "https://github.com/bydamiano/emailhandler-site/releases/latest",
+        "image": "https://bydamiano.github.io/emailhandler-site/assets/icon-512.png",
+        "screenshot": "https://bydamiano.github.io/emailhandler-site/assets/og-image.png",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "Damiano Maka" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "it",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "EmailHandler è gratis?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sì. L'app è gratuita. Per capire cos'è ogni email usa Jev, il modello decisionale di TypeSafe, con la tua chiave API TypeSafe. TypeSafe ti addebita l'uso direttamente: costa una frazione di centesimo per email." }
+          },
+          {
+            "@type": "Question",
+            "name": "EmailHandler può modificare o eliminare la mia posta senza chiedere?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Le scansioni leggono e suggeriscono soltanto. Etichette, spostamento nel Cestino e disiscrizioni avvengono solo dopo il tuo clic, e prima vedi il numero esatto di email. Le email eliminate vanno nel Cestino; solo Svuota cestino elimina per sempre, dopo una conferma." }
+          },
+          {
+            "@type": "Question",
+            "name": "Dove finisce la mia posta?",
+            "acceptedAnswer": { "@type": "Answer", "text": "L'app parla direttamente con Gmail o Outlook con il tuo accesso, e con TypeSafe con la tua chiave. Non esiste un server di EmailHandler. I risultati restano sul tuo computer e gli accessi sono cifrati dal sistema operativo." }
+          },
+          {
+            "@type": "Question",
+            "name": "Con quali account di posta funziona?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Gmail e Google Workspace, e Outlook.com, Hotmail, Live, MSN e Microsoft 365. Puoi collegare più account." }
+          },
+          {
+            "@type": "Question",
+            "name": "Perché il computer mi avvisa quando apro EmailHandler?",
+            "acceptedAnswer": { "@type": "Answer", "text": "L'app è gratuita e non è firmata con un certificato Apple o Microsoft a pagamento. Su macOS apri Impostazioni di Sistema, Privacy e sicurezza, e fai clic su Apri comunque. Su Windows fai clic su Ulteriori informazioni, poi Esegui comunque. Lo fai una volta sola." }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip btn btn-go" href="#main">Vai al contenuto</a>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="./" aria-label="EmailHandler, pagina iniziale">
+          <img src="../assets/icon.svg" alt="" width="44" height="44" />
+          <span>Email<span class="hot">Handler</span></span>
+        </a>
+        <nav class="nav" aria-label="Sito">
+          <a href="#levels">Come funziona</a>
+          <a href="#powerups">Potenziamenti</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#faq">FAQ</a>
+          <a href="readme.html">README</a>
+        </nav>
+        <div class="hdr-end">
+          <nav class="lang" aria-label="Lingua">
+            <a href="../" hreflang="en" lang="en" data-lang="en">EN</a>
+            <a href="./" hreflang="it" lang="it" data-lang="it" aria-current="true">IT</a>
+          </nav>
+          <a class="btn btn-go btn-sm" href="#download">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+            <span class="label">Scarica</span>
+          </a>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"></div>
+    </header>
+
+    <main id="main">
+      <!-- ===== Hero ===== -->
+      <section class="container hero" aria-labelledby="hero-title">
+        <div>
+          <p class="pill in" style="--d: 0"><span class="badge">NUOVO</span>È uscita la versione 1.0 · gratis per macOS, Windows e Linux</p>
+          <h1 id="hero-title" class="display">
+            <span class="in" style="--d: 1">Pulisci la posta.</span>
+            <span class="in hot" style="--d: 2">Trasformala in un gioco.</span>
+          </h1>
+          <svg class="squiggle in" style="--d: 3" viewBox="0 0 300 20" aria-hidden="true"><path d="M4 12c30-10 50 8 80 0s50-10 80 0 50 8 80 0 34-8 52-2" fill="none" stroke="#ffc23d" stroke-width="7" stroke-linecap="round" /></svg>
+          <p class="lead in" style="--d: 3">
+            EmailHandler etichetta ogni email, ti disiscrive in blocco e trova cosa puoi eliminare. Per Gmail e Outlook.
+            Nella tua casella non cambia niente finché non fai clic.
+          </p>
+          <div class="hero-actions in" style="--d: 4">
+            <a class="btn btn-go btn-lg" id="hero-download" href="#download">
+              <span id="hero-download-text">Scarica gratis</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#levels">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg>
+              Guardalo riordinare una casella
+            </a>
+          </div>
+          <ul class="hero-checks in" style="--d: 5">
+            <li class="check"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>Niente cambia senza il tuo clic</li>
+            <li class="check"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>Le email speciali non si toccano</li>
+            <li class="check"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#16a766" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>Nessun server di EmailHandler</li>
+          </ul>
+          <p class="meta hero-meta in" style="--d: 6">Versione 1.0.0, uscita il 31 ottobre 2026</p>
+        </div>
+
+        <div class="parallax">
+          <div class="stage in" style="--d: 2">
+            <div class="hud">
+              <span class="badge" id="hud-level">LV 1</span>
+              <span class="hud-name hide-sm" id="hud-name">Recluta della posta</span>
+              <div class="xp-track" aria-hidden="true"><div class="xp-fill" id="hud-fill"></div></div>
+              <span class="hud-xp" id="hud-xp">20 XP</span>
+            </div>
+
+            <span class="chip" aria-hidden="true" style="top: 22%; left: 5%; --rot: -7deg; animation-delay: -0.4s"><span class="dot" style="--c: #fb4c2f"></span>Fatture</span>
+            <span class="chip" aria-hidden="true" style="top: 30%; right: 5%; --rot: 6deg; animation-delay: -1.6s"><span class="dot" style="--c: #2da2bb"></span>Viaggi</span>
+            <span class="chip" aria-hidden="true" style="bottom: 24%; left: 4%; --rot: 5deg; animation-delay: -2.4s"><span class="dot" style="--c: #e07798"></span>Promozioni</span>
+            <span class="chip" aria-hidden="true" style="bottom: 13%; right: 6%; --rot: -5deg; animation-delay: -1s"><span class="dot" style="--c: #fad165"></span>★ Importanti</span>
+            <span class="chip hide-sm" aria-hidden="true" style="top: 50%; left: 2%; --rot: -3deg; animation-delay: -3s"><span class="dot" style="--c: #4a86e8"></span>Newsletter</span>
+            <span class="combo" aria-hidden="true">COMBO ×3</span>
+
+            <div class="mascot-shadow" aria-hidden="true"></div>
+            <button type="button" class="poke" id="poke" aria-label="Tocca la busta per guadagnare 10 XP">
+              <svg class="float" viewBox="0 0 320 300" width="100%" aria-hidden="true">
+                <path class="spark" d="M262 22c5 20 13 28 33 33-20 5-28 13-33 33-5-20-13-28-33-33 20-5 28-13 33-33Z" fill="#ffc23d" stroke="#1f1b2d" stroke-width="6" stroke-linejoin="round" />
+                <circle cx="34" cy="70" r="11" fill="#ffc23d" stroke="#1f1b2d" stroke-width="4" />
+                <rect x="282" y="236" width="22" height="22" rx="6" transform="rotate(20 293 247)" fill="#ff6fae" stroke="#1f1b2d" stroke-width="4" />
+                <rect x="46" y="98" width="240" height="176" rx="46" fill="#1f1b2d" />
+                <rect x="36" y="86" width="240" height="176" rx="46" fill="#ffffff" stroke="#1f1b2d" stroke-width="6" />
+                <path d="M72 124 156 184 240 124" fill="none" stroke="#1f1b2d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+                <g class="eye"><ellipse cx="116" cy="212" rx="10" ry="12" fill="#1f1b2d" /><circle cx="119" cy="207" r="3.5" fill="#ffffff" /></g>
+                <g class="eye"><ellipse cx="196" cy="212" rx="10" ry="12" fill="#1f1b2d" /><circle cx="199" cy="207" r="3.5" fill="#ffffff" /></g>
+                <ellipse cx="94" cy="236" rx="14" ry="8" fill="#ff6fae" opacity="0.85" />
+                <ellipse cx="218" cy="236" rx="14" ry="8" fill="#ff6fae" opacity="0.85" />
+                <path d="M141 232q15 15 30 0" fill="none" stroke="#1f1b2d" stroke-width="6" stroke-linecap="round" />
+              </svg>
+            </button>
+            <span class="xp-pop" id="xp-pop" aria-hidden="true">+10 XP</span>
+            <span class="lvup" id="lvup" role="status"></span>
+          </div>
+          <p class="poke-hint">psst… tocca la busta</p>
+        </div>
+      </section>
+
+      <!-- ===== Tag marquee ===== -->
+      <div class="band" aria-hidden="true">
+        <div class="band-track">
+          <span class="chip"><span class="dot" style="--c: #fb4c2f"></span>Fatture</span>
+          <span class="chip"><span class="dot" style="--c: #ffad47"></span>Ordini</span>
+          <span class="chip"><span class="dot" style="--c: #4a86e8"></span>Newsletter</span>
+          <span class="chip"><span class="dot" style="--c: #e07798"></span>Promozioni</span>
+          <span class="chip"><span class="dot" style="--c: #a479e2"></span>Social</span>
+          <span class="chip"><span class="dot" style="--c: #285bac"></span>Lavoro</span>
+          <span class="chip"><span class="dot" style="--c: #fad165"></span>★ Importanti</span>
+          <span class="chip"><span class="dot" style="--c: #16a766"></span>Personale</span>
+          <span class="chip"><span class="dot" style="--c: #2da2bb"></span>Viaggi</span>
+          <span class="chip"><span class="dot" style="--c: #f2c960"></span>Sicurezza</span>
+          <span class="chip"><span class="dot" style="--c: #822111"></span>Spam e truffe</span>
+          <span class="chip"><span class="dot" style="--c: #999999"></span>Altro</span>
+          <!-- second copy: the loop scrolls by exactly half its width -->
+          <span class="chip"><span class="dot" style="--c: #fb4c2f"></span>Fatture</span>
+          <span class="chip"><span class="dot" style="--c: #ffad47"></span>Ordini</span>
+          <span class="chip"><span class="dot" style="--c: #4a86e8"></span>Newsletter</span>
+          <span class="chip"><span class="dot" style="--c: #e07798"></span>Promozioni</span>
+          <span class="chip"><span class="dot" style="--c: #a479e2"></span>Social</span>
+          <span class="chip"><span class="dot" style="--c: #285bac"></span>Lavoro</span>
+          <span class="chip"><span class="dot" style="--c: #fad165"></span>★ Importanti</span>
+          <span class="chip"><span class="dot" style="--c: #16a766"></span>Personale</span>
+          <span class="chip"><span class="dot" style="--c: #2da2bb"></span>Viaggi</span>
+          <span class="chip"><span class="dot" style="--c: #f2c960"></span>Sicurezza</span>
+          <span class="chip"><span class="dot" style="--c: #822111"></span>Spam e truffe</span>
+          <span class="chip"><span class="dot" style="--c: #999999"></span>Altro</span>
+        </div>
+      </div>
+
+      <!-- ===== Levels ===== -->
+      <section id="levels" class="container levels" aria-labelledby="levels-title">
+        <div class="section-head sr">
+          <p class="eyebrow">Come funziona</p>
+          <h2 id="levels-title" class="display">Quattro livelli. Una casella in ordine.</h2>
+          <p class="lead">Scorri e guarda una scansione in azione. Niente grinding.</p>
+        </div>
+
+        <div class="track-line" aria-hidden="true"><div class="track-fill"></div></div>
+
+        <div class="lv l1">
+          <div class="lv-node" aria-hidden="true">1</div>
+          <div class="lv-text sr">
+            <p class="eyebrow">Livello 1 · La palude</p>
+            <h3 class="display">La tua posta, adesso.</h3>
+            <p>Migliaia di email mai riordinate. Ricevute sepolte sotto le promozioni, newsletter che non leggi da mesi. Fa paura. Sistemiamola.</p>
+          </div>
+          <div class="vis" role="img" aria-label="Una casella in disordine: cinque email non riordinate ammucchiate storte, con un contatore delle non lette.">
+            <div class="vis-top"><strong>Posta in arrivo</strong><span class="badge pulse" style="background: #ff6fae">1.284 da riordinare</span></div>
+            <div class="mail">
+              <div class="mrow mess" style="--tx: -30px; --ty: 10px; --r: -6deg"><span class="av" style="--c: #ffc23d">B</span><div><div class="who">Banca di Roma</div><div class="subj">Il tuo estratto conto di ottobre è pronto</div></div></div>
+              <div class="mrow mess" style="--tx: 40px; --ty: -6px; --r: 5deg"><span class="av" style="--c: #ff6fae">S</span><div><div class="who">Shop Weekly</div><div class="subj">-50% su tutto, solo oggi</div></div></div>
+              <div class="mrow mess" style="--tx: -14px; --ty: 4px; --r: -3deg"><span class="av" style="--c: #5cc8ff">R</span><div><div class="who">Ryanair</div><div class="subj">La tua carta d'imbarco per Roma</div></div></div>
+              <div class="mrow mess" style="--tx: 26px; --ty: -10px; --r: 7deg"><span class="av" style="--c: #ff6a3d">D</span><div><div class="who">Daily Deals</div><div class="subj">Ultima occasione: mancano 3 ore!</div></div></div>
+              <div class="mrow mess" style="--tx: -36px; --ty: 0px; --r: -5deg"><span class="av" style="--c: #8b6cff">T</span><div><div class="who">Tech Weekly</div><div class="subj">Questa settimana nei gadget, numero 212</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lv l2">
+          <div class="lv-node" aria-hidden="true">2</div>
+          <div class="lv-text sr">
+            <p class="eyebrow">Livello 2 · Festa delle etichette</p>
+            <h3 class="display">Ogni email riceve un'etichetta.</h3>
+            <p>Jev, il modello decisionale di TypeSafe, legge mittente, oggetto e una breve anteprima, poi sceglie una delle 11 etichette colorate nella tua lingua. Ricevute e contratti ricevono anche Importanti.</p>
+          </div>
+          <div class="vis" role="img" aria-label="Quattro email ricevono etichette colorate: Fatture e Importanti, Viaggi, Personale, Newsletter.">
+            <div class="vis-top"><strong>Posta in arrivo</strong><span class="badge" style="background: #ffc23d">+40 XP</span></div>
+            <div class="mail">
+              <div class="mrow"><span class="av" style="--c: #ffc23d">B</span><div><div class="who">Banca di Roma</div><div class="subj">Il tuo estratto conto di ottobre è pronto</div></div><span class="tags"><span class="tag stamp" style="--i: 0"><span class="dot" style="--c: #fb4c2f"></span>Fatture</span><span class="tag stamp" style="--i: 1; background: #fad165">★ Importanti</span></span></div>
+              <div class="mrow"><span class="av" style="--c: #5cc8ff">R</span><div><div class="who">Ryanair</div><div class="subj">La tua carta d'imbarco per Roma</div></div><span class="tag stamp" style="--i: 2"><span class="dot" style="--c: #2da2bb"></span>Viaggi</span></div>
+              <div class="mrow"><span class="av" style="--c: #3ddc97">M</span><div><div class="who">Marta</div><div class="subj">Cena sabato?</div></div><span class="tag stamp" style="--i: 3"><span class="dot" style="--c: #16a766"></span>Personale</span></div>
+              <div class="mrow"><span class="av" style="--c: #8b6cff">T</span><div><div class="who">Tech Weekly</div><div class="subj">Questa settimana nei gadget, numero 212</div></div><span class="tag stamp" style="--i: 4"><span class="dot" style="--c: #4a86e8"></span>Newsletter</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lv l3">
+          <div class="lv-node" aria-hidden="true">3</div>
+          <div class="lv-text sr">
+            <p class="eyebrow">Livello 3 · Corsa al cestino</p>
+            <h3 class="display">La spazzatura va nel Cestino.</h3>
+            <p>Promozioni vecchie, avvisi scaduti e spam vengono proposti per l'eliminazione. Vedi il numero esatto e confermi. Le email speciali non vengono mai proposte, e il Cestino conserva tutto per 30 giorni.</p>
+          </div>
+          <div class="vis" role="img" aria-label="Due email promozionali scivolano nel Cestino; un contatore dice che 2 email aspettano il tuo OK.">
+            <div class="vis-top"><strong>Da eliminare?</strong><span class="meta">2 proposte</span></div>
+            <div class="mail">
+              <div class="mrow"><span class="av" style="--c: #ffc23d">B</span><div><div class="who">Banca di Roma</div><div class="subj">Il tuo estratto conto di ottobre è pronto</div></div><span class="tag" style="background: #fad165">★ Tieni</span></div>
+              <div class="slot"><div class="mrow junk"><span class="av" style="--c: #ff6fae">S</span><div><div class="who">Shop Weekly</div><div class="subj">-50% su tutto, solo oggi</div></div><span class="tag"><span class="dot" style="--c: #e07798"></span>Promozioni</span></div></div>
+              <div class="mrow"><span class="av" style="--c: #3ddc97">M</span><div><div class="who">Marta</div><div class="subj">Cena sabato?</div></div><span class="tag"><span class="dot" style="--c: #16a766"></span>Personale</span></div>
+              <div class="slot"><div class="mrow junk"><span class="av" style="--c: #ff6a3d">D</span><div><div class="who">Daily Deals</div><div class="subj">Ultima occasione: mancano 3 ore!</div></div><span class="tag"><span class="dot" style="--c: #e07798"></span>Promozioni</span></div></div>
+            </div>
+            <div class="trash-bar">
+              <span><span class="bin"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1f1b2d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13" /></svg></span>2 email aspettano il tuo OK</span>
+              <span class="btn btn-go">Sposta nel Cestino</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lv l4">
+          <div class="lv-node" aria-hidden="true">4</div>
+          <div class="lv-text sr">
+            <p class="eyebrow">Livello 4 · Boss finale</p>
+            <h3 class="display">Disiscriviti con un clic.</h3>
+            <p>Un clic quando il mittente lo supporta, un'email quando non lo fa, un link come ultima risorsa. Mai per lo spam. Poi le newsletter smettono di arrivare. Vittoria.</p>
+          </div>
+          <div class="vis" role="img" aria-label="Boss finale: la newsletter Tech Weekly perde tutti i punti vita e riceve il timbro Disiscritto.">
+            <div class="boss">
+              <div class="vis-top">
+                <span class="badge" style="background: #1f1b2d; color: #ff6fae; letter-spacing: 0.1em">BOSS FINALE</span>
+                <span class="meta">Ogni sabato dal 2019</span>
+              </div>
+              <div class="boss-card">
+                <span class="av" style="--c: #8b6cff">T</span>
+                <div style="flex: 1; min-width: 0">
+                  <div class="display">Tech Weekly</div>
+                  <div class="hp-row">PV <div class="hp"><div class="hp-fill"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <span class="ko"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1f1b2d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>Disiscritto</span>
+            <div class="vis-foot">
+              <span class="tag" style="background: #c9f5e1">Un clic · RFC 8058</span>
+              <span class="tag">Riserva: email di disiscrizione</span>
+              <span class="tag">Mai per lo spam</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Power-ups ===== -->
+      <section id="powerups" class="container powerups" aria-labelledby="pu-title">
+        <div class="split-head sr">
+          <div>
+            <p class="eyebrow">Potenziamenti</p>
+            <h2 id="pu-title" class="display">Sette potenziamenti per una casella in ordine.</h2>
+          </div>
+          <p class="lead">Tutti sbloccati dal primo giorno. Su tutti gli account Gmail e Outlook che vuoi, con una sola chiave TypeSafe.</p>
+        </div>
+        <ul class="pu-grid">
+          <li class="pu" style="--i: 0">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #ffc23d"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4.5A1.5 1.5 0 0 1 4.5 3H12l9 9-9 9-9-9Z" /><circle cx="8" cy="8" r="1.6" /></svg></span><span class="rar" style="--c: #c9f5e1">Base</span></div>
+              <h3>Etichetta ogni email</h3>
+              <p>Fatture, Ordini, Newsletter, Promozioni, Social, Lavoro, Personale, Viaggi, Sicurezza, Spam o Altro. Nella tua lingua, nella tua vera casella.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 1">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #fad165"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z" /></svg></span><span class="rar" style="--c: #cdeeff">Raro</span></div>
+              <h3>Trova ciò che conta</h3>
+              <p>Un'etichetta Importanti per ricevute, contratti, ricette mediche e conversazioni vere, accanto all'etichetta normale.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 2">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #ff6a3d"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5" /></svg></span><span class="rar" style="--c: #e2d9ff">Epico</span></div>
+              <h3>Trova cosa puoi eliminare</h3>
+              <p>Promozioni, avvisi scaduti, vecchi aggiornamenti di spedizione. Le email con più di 6 mesi ricevono un punteggio di "importanza oggi" da 0 a 4.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 3">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #5cc8ff"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="2" /><path d="M3 7l7 5 7-5M15 17l5 5M20 17l-5 5" /></svg></span><span class="rar" style="--c: #ffe7a3">Leggendario</span></div>
+              <h3>Disiscrive in blocco</h3>
+              <p>Un clic quando il mittente lo supporta, un'email quando non lo fa, un link come ultima risorsa. Mai per lo spam.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 4">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #8b6cff"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" /><circle cx="17" cy="9" r="2.5" /><path d="M16.5 14.2c2.7.2 4.5 2.4 4.5 5" /></svg></span><span class="rar" style="--c: #e2d9ff">Epico</span></div>
+              <h3>Pulisce per mittente</h3>
+              <p>Etichetta o cestina tutto ciò che arriva da un mittente in un periodo, vedendo prima il numero esatto.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 5">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #ff6fae"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2Z" /><path d="M9 4h6M12 11v6M15 2.5l1 1.5M9 2.5 8 4" /></svg></span><span class="rar" style="--c: #cdeeff">Raro</span></div>
+              <h3>Svuota il Cestino</h3>
+              <p>Un clic, definitivo, con una conferma prima. L'unica cosa che elimina per sempre.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 6">
+            <div class="pu-card">
+              <div class="pu-top"><span class="tile" style="--c: #3ddc97"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1f1b2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="9" width="14" height="10" rx="2" /><path d="M7 11l7 4.5 7-4.5M3 15V7a2 2 0 0 1 2-2h11" /></svg></span><span class="rar" style="--c: #cdeeff">Raro</span></div>
+              <h3>Più account</h3>
+              <p>Gmail e Outlook fianco a fianco. Cambi account con un clic dal menu.</p>
+            </div>
+          </li>
+          <li class="pu" style="--i: 7">
+            <div class="pu-card gold">
+              <div class="pu-top"><span class="tile" style="--c: #1f1b2d"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#ffc23d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z" /><path d="M8.5 12l2.5 2.5 4.5-5" /></svg></span><span class="rar" style="--c: #ffffff">Sempre attivo</span></div>
+              <h3>Regola zero: niente succede da solo.</h3>
+              <p>Ogni azione richiede il tuo clic e mostra prima il numero esatto di email. Le email speciali (Gmail) e contrassegnate (Outlook) non si toccano mai.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== Privacy ===== -->
+      <section id="privacy" class="night privacy" aria-labelledby="privacy-title">
+        <div class="container">
+          <div class="sr">
+            <p class="eyebrow">Privacy</p>
+            <h2 id="privacy-title" class="display">La tua posta resta sul tuo computer.</h2>
+            <p class="lead">Non esiste un server di EmailHandler. L'app parla direttamente con la tua casella e con Jev, con il tuo accesso e la tua chiave.</p>
+            <ul class="checks">
+              <li><span class="chk-i"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>Gli accessi e la tua chiave TypeSafe sono cifrati dal sistema operativo (Portachiavi, DPAPI, libsecret).</li>
+              <li><span class="chk-i"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>I risultati delle scansioni restano in un database locale, uno per account. Il testo delle email non viene mai salvato.</li>
+              <li><span class="chk-i"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span><span>Niente analytics, niente tracciamento, niente telemetria. Leggi l'<a href="privacy.html">informativa sulla privacy</a> completa.</span></li>
+            </ul>
+          </div>
+
+          <div class="flow sr" role="img" aria-label="Il tuo computer parla direttamente con Gmail o Outlook e con Jev di TypeSafe. In mezzo non c'è nessun server di EmailHandler.">
+            <div class="flow-row">
+              <div class="nbox">Gmail · Outlook<small>il tuo accesso</small></div>
+              <div class="nbox">Jev di TypeSafe<small>la tua chiave</small></div>
+            </div>
+            <div class="flow-row"><div class="wire"></div><div class="wire"></div></div>
+            <div class="me">
+              <img src="../assets/icon.svg" alt="" width="60" height="60" />
+              <span class="display">Il tuo computer</span>
+            </div>
+            <div class="cut">
+              <div class="wire"></div>
+              <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg></span>
+            </div>
+            <div class="ghost">
+              <s>Server di EmailHandler</s>
+              <span class="badge">non esiste</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Download ===== -->
+      <section id="download" class="container download" aria-labelledby="download-title">
+        <div class="section-head sr">
+          <p class="eyebrow">Scegli la piattaforma</p>
+          <h2 id="download-title" class="display">Scarica EmailHandler 1.0</h2>
+          <p class="lead">Gratis. Scegli il tuo computer, poi premi start.</p>
+        </div>
+
+        <p class="phone-note" id="phone-note" hidden>
+          EmailHandler è un'app desktop. Apri questa pagina sul tuo Mac o PC per scaricarla, oppure mandati il link:
+          <strong>bydamiano.github.io/emailhandler-site/it</strong>
+        </p>
+
+        <div class="pf-grid" role="group" aria-label="Piattaforma">
+          <button type="button" class="pf" aria-pressed="true" data-os="mac-arm" data-label="Mac con chip Apple" data-file="EmailHandler-mac-apple-silicon.dmg" data-steps="steps-mac">
+            <span class="sel">Scelto</span>
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#1f1b2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2.5" /><rect x="9.5" y="9.5" width="5" height="5" rx="1" /><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" /></svg>
+            <strong>Mac con chip Apple</strong>
+            <span>M1 e successivi · .dmg</span>
+            <span class="mine">Questo computer</span>
+          </button>
+          <button type="button" class="pf" aria-pressed="false" data-os="mac-intel" data-label="Mac con chip Intel" data-file="EmailHandler-mac-intel.dmg" data-steps="steps-mac">
+            <span class="sel">Scelto</span>
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#1f1b2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2" /><path d="M2 19h20" /></svg>
+            <strong>Mac con chip Intel</strong>
+            <span>Mac meno recenti · .dmg</span>
+            <span class="mine">Questo computer</span>
+          </button>
+          <button type="button" class="pf" aria-pressed="false" data-os="windows" data-label="Windows" data-file="EmailHandler-windows-setup.exe" data-steps="steps-win">
+            <span class="sel">Scelto</span>
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#1f1b2d" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.2" /><rect x="13" y="4" width="7" height="7" rx="1.2" /><rect x="4" y="13" width="7" height="7" rx="1.2" /><rect x="13" y="13" width="7" height="7" rx="1.2" /></svg>
+            <strong>Windows</strong>
+            <span>Windows 10 e 11, 64 bit · .exe</span>
+            <span class="mine">Questo computer</span>
+          </button>
+          <button type="button" class="pf" aria-pressed="false" data-os="linux" data-label="Linux" data-file="EmailHandler-linux.AppImage" data-steps="steps-linux">
+            <span class="sel">Scelto</span>
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#1f1b2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5" /><path d="M7 9l3 3-3 3M12 15h5" /></svg>
+            <strong>Linux</strong>
+            <span>64 bit · .AppImage</span>
+            <span class="mine">Questo computer</span>
+          </button>
+        </div>
+
+        <div class="start sr">
+          <div class="start-go">
+            <span class="eyebrow">Giocatore 1</span>
+            <span class="display" id="start-name" aria-live="polite">Mac con chip Apple</span>
+            <a class="btn btn-go btn-lg" id="start-link" data-download data-label="Mac con chip Apple" href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-mac-apple-silicon.dmg">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+              Premi start
+            </a>
+            <span class="meta" id="start-file">EmailHandler-mac-apple-silicon.dmg</span>
+          </div>
+          <div class="quests">
+            <p class="eyebrow">Diario delle missioni</p>
+            <ol id="steps-mac">
+              <li>Apri il <code>.dmg</code> e trascina EmailHandler in Applicazioni.</li>
+              <li>Apri EmailHandler. macOS dice che non può verificare lo sviluppatore, perché l'app non è autenticata da Apple. Fai clic su Fine.</li>
+              <li>Apri Impostazioni di Sistema › Privacy e sicurezza, scorri in basso e fai clic su <strong>Apri comunque</strong>. Lo fai una volta sola.</li>
+              <li>Fai clic su Accedi con Google o Accedi con Microsoft, poi incolla la tua chiave API TypeSafe.</li>
+            </ol>
+            <ol id="steps-win" hidden>
+              <li>Apri <code>EmailHandler-windows-setup.exe</code>.</li>
+              <li>Windows dice "Windows ha protetto il PC", perché l'app non è firmata con un certificato a pagamento. Fai clic su <strong>Ulteriori informazioni</strong>, poi <strong>Esegui comunque</strong>.</li>
+              <li>Segui l'installazione, poi apri EmailHandler dal menu Start.</li>
+              <li>Fai clic su Accedi con Google o Accedi con Microsoft, poi incolla la tua chiave API TypeSafe.</li>
+            </ol>
+            <ol id="steps-linux" hidden>
+              <li>AppImage: esegui <code>chmod +x EmailHandler-linux.AppImage</code>, poi aprila. Debian o Ubuntu: installa il <code>.deb</code>.</li>
+              <li>Per proteggere al meglio il tuo accesso, tieni attivo un portachiavi (GNOME Keyring o KWallet). Senza, l'app ti avvisa.</li>
+              <li>Fai clic su Accedi con Google o Accedi con Microsoft, poi incolla la tua chiave API TypeSafe.</li>
+            </ol>
+            <p>Non hai ancora una chiave? <a href="https://console.typesafe.ai/keys">Crea una chiave API TypeSafe</a>.</p>
+          </div>
+        </div>
+
+        <p class="alt-links">
+          Link diretti:
+          <a href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-mac-apple-silicon.dmg" data-download data-label="Mac con chip Apple">chip Apple</a> ·
+          <a href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-mac-intel.dmg" data-download data-label="Mac con chip Intel">Mac Intel</a> ·
+          <a href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-windows-setup.exe" data-download data-label="Windows">Windows</a> ·
+          <a href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-linux.AppImage" data-download data-label="Linux">Linux AppImage</a> ·
+          <a href="https://github.com/bydamiano/emailhandler-site/releases/latest/download/EmailHandler-linux.deb" data-download data-label="Linux (.deb)">Linux .deb</a> ·
+          <a href="https://github.com/bydamiano/emailhandler-site/releases/latest">Tutti i file e i checksum</a><br />
+          Non sai che Mac hai? Menu Apple › Informazioni su questo Mac: "Chip: Apple M…" vuol dire chip Apple.
+        </p>
+
+        <div class="beta sr">
+          <span class="tile"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#1f1b2d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3L14 9V3" /><path d="M7.5 15h9" /></svg></span>
+          <div>
+            <h3 class="display">Gmail è in beta</h3>
+            <p>
+              Mentre Google verifica l'app, l'accesso a Gmail funziona per i tester invitati, e Google mostra "Google non ha verificato questa app"
+              (fai clic su Avanzate, poi Vai a EmailHandler). Outlook e Hotmail funzionano per tutti. Vuoi provarla con Gmail? Scrivi a
+              <a href="mailto:bydamiano07@gmail.com?subject=EmailHandler%20beta">bydamiano07@gmail.com</a> con il tuo indirizzo Gmail.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section id="faq" class="container faq" aria-labelledby="faq-title">
+        <div class="sr">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title" class="display">Domande e risposte.</h2>
+          <p class="lead">Ancora dubbi? <a href="mailto:bydamiano07@gmail.com">Scrivimi</a>.</p>
+        </div>
+        <div class="faq-list">
+          <details class="sr">
+            <summary>EmailHandler è gratis?<span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span></summary>
+            <p>Sì. L'app è gratuita. Per capire cos'è ogni email usa Jev, il modello decisionale di TypeSafe, con la tua chiave API TypeSafe. TypeSafe ti addebita l'uso direttamente: costa una frazione di centesimo per email.</p>
+          </details>
+          <details class="sr">
+            <summary>EmailHandler può modificare o eliminare la mia posta senza chiedere?<span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span></summary>
+            <p>No. Le scansioni leggono e suggeriscono soltanto. Etichette, spostamento nel Cestino e disiscrizioni avvengono solo dopo il tuo clic, e prima vedi il numero esatto di email. Le email eliminate vanno nel Cestino; solo Svuota cestino elimina per sempre, dopo una conferma.</p>
+          </details>
+          <details class="sr">
+            <summary>Dove finisce la mia posta?<span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span></summary>
+            <p>L'app parla direttamente con Gmail o Outlook con il tuo accesso, e con TypeSafe con la tua chiave. Non esiste un server di EmailHandler. I risultati restano sul tuo computer e gli accessi sono cifrati dal sistema operativo.</p>
+          </details>
+          <details class="sr">
+            <summary>Con quali account di posta funziona?<span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span></summary>
+            <p>Gmail e Google Workspace, e Outlook.com, Hotmail, Live, MSN e Microsoft 365. Puoi collegare più account.</p>
+          </details>
+          <details class="sr">
+            <summary>Perché il computer mi avvisa quando apro EmailHandler?<span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#1f1b2d" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span></summary>
+            <p>L'app è gratuita e non è firmata con un certificato Apple o Microsoft a pagamento. Su macOS apri Impostazioni di Sistema, Privacy e sicurezza, e fai clic su Apri comunque. Su Windows fai clic su Ulteriori informazioni, poi Esegui comunque. Lo fai una volta sola.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- ===== Final call ===== -->
+      <section class="container final" aria-labelledby="cta-title">
+        <div class="cta zoom">
+          <span class="conf round" aria-hidden="true" style="left: 8%; --c: #ffc23d; animation-duration: 5s; animation-delay: -1s"></span>
+          <span class="conf" aria-hidden="true" style="left: 18%; --c: #ff6fae; animation-duration: 6.5s; animation-delay: -3s"></span>
+          <span class="conf long" aria-hidden="true" style="left: 31%; --c: #5cc8ff; animation-duration: 4.6s; animation-delay: -2s"></span>
+          <span class="conf round" aria-hidden="true" style="left: 68%; --c: #3ddc97; animation-duration: 5.8s; animation-delay: -4s"></span>
+          <span class="conf" aria-hidden="true" style="left: 80%; --c: #ffffff; animation-duration: 4.9s; animation-delay: -0.5s"></span>
+          <span class="conf long" aria-hidden="true" style="left: 91%; --c: #8b6cff; animation-duration: 6.2s; animation-delay: -2.6s"></span>
+          <div class="cta-in">
+            <img class="float" src="../assets/icon.svg" alt="" width="96" height="96" />
+            <p class="eyebrow">Giocatore 1, pronto?</p>
+            <h2 id="cta-title" class="display">Pronto per l'inbox zero (o quasi)?</h2>
+            <p>Scarica EmailHandler, accedi e guarda la prima scansione riordinare la tua posta.</p>
+            <a class="btn btn-ink btn-lg" href="#download">Scarica gratis</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="night site-footer">
+      <div class="container">
+        <div>
+          <a class="brand" href="./"><img src="../assets/icon.svg" alt="" width="44" height="44" /><span>Email<span class="hot">Handler</span></span></a>
+          <p>Fatto con caffè e tanti link di disiscrizione. Funziona con <a href="https://typesafe.ai">Jev</a>.</p>
+        </div>
+        <nav aria-label="Piè di pagina">
+          <a href="#download">Scarica</a>
+          <a href="readme.html">README</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Termini</a>
+          <a href="mailto:bydamiano07@gmail.com">Contatti</a>
+        </nav>
+        <small>© 2026 Damiano Maka</small>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <img src="../assets/icon.svg" alt="" width="40" height="40" />
+      <p id="toast-text"></p>
+    </div>
+
+    <script src="../site.js" defer></script>
+  </body>
+</html>

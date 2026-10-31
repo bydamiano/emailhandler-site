@@ -1,14 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-alt="it/">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script src="lang.js"></script>
     <title>EmailHandler: clean your inbox with AI, free desktop app for Gmail and Outlook</title>
     <meta
       name="description"
       content="EmailHandler is a free desktop app for macOS, Windows and Linux that tags every email, unsubscribes you in bulk and finds what's safe to delete. Works with Gmail and Outlook. Your mail stays on your computer."
     />
     <link rel="canonical" href="https://bydamiano.github.io/emailhandler-site/" />
+    <link rel="alternate" hreflang="en" href="https://bydamiano.github.io/emailhandler-site/" />
+    <link rel="alternate" hreflang="it" href="https://bydamiano.github.io/emailhandler-site/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://bydamiano.github.io/emailhandler-site/" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Damiano Maka" />
     <meta name="application-name" content="EmailHandler" />
@@ -115,10 +119,17 @@
           <a href="#faq">FAQ</a>
           <a href="readme.html">README</a>
         </nav>
-        <a class="btn btn-go btn-sm" href="#download">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
-          Download
-        </a>
+
+        <div class="hdr-end">
+          <nav class="lang" aria-label="Language">
+            <a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a>
+            <a href="it/" hreflang="it" lang="it" data-lang="it">IT</a>
+          </nav>
+          <a class="btn btn-go btn-sm" href="#download">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+            <span class="label">Download</span>
+          </a>
+        </div>
       </div>
       <div class="progress" aria-hidden="true"></div>
     </header>

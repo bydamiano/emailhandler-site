@@ -1,10 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-alt="it/readme.html">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="lang.js"></script>
     <title>README · EmailHandler</title>
     <meta name="description" content="What EmailHandler does, how it keeps your mail private, and how to build it." />
+    <link rel="canonical" href="https://bydamiano.github.io/emailhandler-site/readme.html" />
+    <link rel="alternate" hreflang="en" href="https://bydamiano.github.io/emailhandler-site/readme.html" />
+    <link rel="alternate" hreflang="it" href="https://bydamiano.github.io/emailhandler-site/it/readme.html" />
+    <link rel="alternate" hreflang="x-default" href="https://bydamiano.github.io/emailhandler-site/readme.html" />
+    <meta name="theme-color" content="#fff8ef" />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,147 +19,136 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrap">
-      <header class="top">
-        <a class="brand" href="./"><img class="mark" src="assets/icon.svg" alt="" width="40" height="40" /><span>Email<b>Handler</b></span></a>
-        <nav class="links" aria-label="Site">
-          <a href="./">Download</a>
+    <a class="skip btn btn-go" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="./" aria-label="EmailHandler home">
+          <img src="assets/icon.svg" alt="" width="44" height="44" />
+          <span>Email<span class="hot">Handler</span></span>
+        </a>
+        <nav class="nav" aria-label="Site">
+          <a href="./#levels">How it works</a>
+          <a href="./#powerups">Power-ups</a>
+          <a href="./#faq">FAQ</a>
           <a href="readme.html" aria-current="page">README</a>
           <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
         </nav>
-      </header>
+        <div class="hdr-end">
+          <nav class="lang" aria-label="Language">
+            <a href="readme.html" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a>
+            <a href="it/readme.html" hreflang="it" lang="it" data-lang="it">IT</a>
+          </nav>
+          <a class="btn btn-go btn-sm" href="./#download">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+            <span class="label">Download</span>
+          </a>
+        </div>
+      </div>
+    </header>
 
-      <main class="readme">
-<p align="center">
-  <a target="_blank" rel="noopener noreferrer" href="assets/social-preview.png"><img src="assets/social-preview.png" alt="EmailHandler: clean your inbox, make it a game" width="880" style="max-width: 100%;"></a>
-</p>
-<p align="center">
-  <a target="_blank" rel="noopener noreferrer" href="assets/icon.png"><img src="assets/icon.png" alt="" width="72" style="max-width: 100%;"></a><br>
-  <b>EmailHandler</b>: a free desktop app that cleans up your mailbox with AI.<br>
-  <sub>macOS · Windows · Linux  ·  Gmail + Outlook  ·  English + Italiano</sub>
-</p>
-<hr>
-<h2>✨ What it does</h2>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🏷️ <strong>Tags every email</strong></td>
-<td>Jev (TypeSafe's decision model) sorts each email into one of 11 colored tags (Billing, Orders, Newsletters, Promotions, Social, Work, Personal, Travel, Security, Spam, Other), in your language.</td>
-</tr>
-<tr>
-<td>⭐ <strong>Finds what matters</strong></td>
-<td>An <strong>Important</strong> tag for receipts, contracts, prescriptions and real conversations. It sits next to the normal tag.</td>
-</tr>
-<tr>
-<td>🗑️ <strong>Finds what's safe to delete</strong></td>
-<td>Promotions, expired alerts, old delivery updates. Old emails (6 months or older) get an "importance today" score from 0 to 4, so you can clear years of clutter, tagged or not.</td>
-</tr>
-<tr>
-<td>📭 <strong>Unsubscribes in bulk</strong></td>
-<td>One-click (RFC 8058) when the sender supports it, an email when it doesn't, a link as the last resort. Never for spam.</td>
-</tr>
-<tr>
-<td>👥 <strong>Cleans up by sender</strong></td>
-<td>Tag or trash everything from one sender in a period, with the exact count shown first.</td>
-</tr>
-<tr>
-<td>🧹 <strong>Empties the Trash</strong></td>
-<td>One click, permanent, with a confirmation.</td>
-</tr>
-<tr>
-<td>👤 <strong>Several accounts</strong></td>
-<td>Gmail and Outlook side by side, one Jev key for all of them.</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<p><strong>Nothing happens on its own.</strong> Every action needs your click and shows the exact number of emails first. Starred (Gmail) and flagged (Outlook) emails are never touched. Deleting goes to Trash first (30 days), unless you empty it.</p>
-<h2>🔒 Private by design</h2>
-<p>There is no EmailHandler server. Everything runs on your computer:</p>
-<ul>
-<li>Your mailbox is called directly with your own sign-in (Google or Microsoft).</li>
-<li>Jev is called directly with your own TypeSafe key.</li>
-<li>Sign-in tokens and the remembered Jev key are encrypted with the OS keychain (Keychain, DPAPI, libsecret). On Linux without a keyring the app warns you that they only get basic protection.</li>
-<li>Scan results stay in a local database, one per account. Email bodies are never stored.</li>
-</ul>
-<h2>📬 Sign in</h2>
-<p>Click <strong>Sign in with Google</strong> or <strong>Sign in with Microsoft</strong>. Your browser opens the provider's usual sign-in page; approve access and you're back in the app. That's it: no setup, no codes to copy.</p>
-<markdown-accessiblity-table><table role="table">
-<thead>
-<tr>
-<th>Provider</th>
-<th>Works with</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/4118d0bdf482abbf0c219ab6bdc1c2c321ce8f19882f9e88948b766ba08f36c5/68747470733a2f2f7777772e676f6f676c652e636f6d2f66617669636f6e2e69636f"><img src="https://camo.githubusercontent.com/4118d0bdf482abbf0c219ab6bdc1c2c321ce8f19882f9e88948b766ba08f36c5/68747470733a2f2f7777772e676f6f676c652e636f6d2f66617669636f6e2e69636f" width="14" data-canonical-src="https://www.google.com/favicon.ico" style="max-width: 100%;"></a> <strong>Google</strong></td>
-<td>Gmail, Google Workspace</td>
-</tr>
-<tr>
-<td>🟦 <strong>Microsoft</strong></td>
-<td>Outlook.com, Hotmail, Live, MSN, Microsoft 365</td>
-</tr>
-</tbody>
-</table></markdown-accessiblity-table>
-<blockquote>
-<p><strong>During the beta</strong>, Google only lets invited testers sign in, and shows "Google hasn't verified this app": click <strong>Advanced → Go to EmailHandler</strong>. Microsoft may label the app "unverified". Both go away once the app is verified.</p>
-</blockquote>
-<h2>🛠️ Develop</h2>
-<p>Requires Node 24 (<code class="notranslate">nvm use</code>).</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">npm install
-npm start          <span class="pl-c"><span class="pl-c">#</span> Angular dev server on :4300 + Electron window</span>
-npm <span class="pl-c1">test</span>           <span class="pl-c"><span class="pl-c">#</span> unit tests (SSRF guard, OAuth/PKCE, accounts, Graph mapping, unsubscribe)</span>
-npm run test:it    <span class="pl-c"><span class="pl-c">#</span> Outlook integration test inside Electron (fake Microsoft Graph)</span>
-npm run typecheck  <span class="pl-c"><span class="pl-c">#</span> UI (templates included) + Electron</span>
-npm run app        <span class="pl-c"><span class="pl-c">#</span> build, then run the built app</span>
-npm run brand      <span class="pl-c"><span class="pl-c">#</span> re-render icon, og-image and GitHub social preview from build/*.svg|html</span></pre></div>
-<p>The technical documentation, with what every file and function does, is in <code class="notranslate">docs/TECHNICAL.md</code> (in the source code).</p>
-<h3>Client IDs (developers only)</h3>
-<p>Sign-in needs one free <strong>client ID</strong> per provider. It identifies the app, not the user, and is built into the app, so users never see it.</p>
-<ol>
-<li>Create them once: step-by-step guide (in Italian) in <code class="notranslate">docs/guida-client-id.html</code> (in the source code).</li>
-<li>Put them in <code class="notranslate">oauth.config.json</code> at the repo root, following <code class="notranslate">oauth.config.example.json</code>. The file is gitignored and bundled into every build.</li>
-<li>For development you can use <code class="notranslate">EH_GOOGLE_CLIENT_ID</code>, <code class="notranslate">EH_GOOGLE_CLIENT_SECRET</code> and <code class="notranslate">EH_MICROSOFT_CLIENT_ID</code> instead.</li>
-</ol>
-<p>A build without a client ID shows that provider's button greyed out ("Sign-in isn't available in this build").</p>
-<h2>📦 Build installers (free, unsigned)</h2>
-<div class="highlight highlight-source-shell"><pre class="notranslate">npm run dist:mac     <span class="pl-c"><span class="pl-c">#</span> .dmg + .zip (arm64, x64), ad-hoc signed</span>
-npm run dist:win     <span class="pl-c"><span class="pl-c">#</span> NSIS installer (x64, arm64), unsigned</span>
-npm run dist:linux   <span class="pl-c"><span class="pl-c">#</span> AppImage + .deb (x64, arm64)</span>
-npm run pack         <span class="pl-c"><span class="pl-c">#</span> unpacked app for the current OS, for testing</span></pre></div>
-<p>Output goes to <code class="notranslate">release/</code>. Building each OS on its own machine works best, for example on free GitHub Actions runners.</p>
-<p>Since there is no paid code-signing certificate, the first launch needs one extra step:</p>
-<ul>
-<li><strong>macOS:</strong> open the app once, then <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>. Or run <code class="notranslate">xattr -dr com.apple.quarantine /Applications/EmailHandler.app</code>.</li>
-<li><strong>Windows:</strong> at "Windows protected your PC", click <strong>More info → Run anyway</strong>.</li>
-<li><strong>Linux:</strong> <code class="notranslate">chmod +x EmailHandler-*.AppImage</code>, or install the <code class="notranslate">.deb</code>.</li>
-</ul>
-<h2>🗂️ Layout</h2>
-<pre class="notranslate"><code class="notranslate">electron/   main process: frameless window, app:// protocol + CSP, IPC,
+    <main id="main" class="doc readme">
+      <p class="eyebrow">README</p>
+      <h1>EmailHandler</h1>
+      <p class="lead">A free desktop app that cleans up your mailbox with AI.</p>
+      <p class="meta">macOS · Windows · Linux · Gmail + Outlook · English + Italiano</p>
+      <p><img src="assets/social-preview.png" alt="EmailHandler: clean your inbox, make it a game" width="880" /></p>
+
+      <h2>What it does</h2>
+      <table>
+        <tbody>
+          <tr><td><strong>Tags every email</strong></td><td>Jev (TypeSafe's decision model) sorts each email into one of 11 colored tags (Billing, Orders, Newsletters, Promotions, Social, Work, Personal, Travel, Security, Spam, Other), in your language.</td></tr>
+          <tr><td><strong>Finds what matters</strong></td><td>An <strong>Important</strong> tag for receipts, contracts, prescriptions and real conversations. It sits next to the normal tag.</td></tr>
+          <tr><td><strong>Finds what's safe to delete</strong></td><td>Promotions, expired alerts, old delivery updates. Old emails (6 months or older) get an "importance today" score from 0 to 4, so you can clear years of clutter, tagged or not.</td></tr>
+          <tr><td><strong>Unsubscribes in bulk</strong></td><td>One-click (RFC 8058) when the sender supports it, an email when it doesn't, a link as the last resort. Never for spam.</td></tr>
+          <tr><td><strong>Cleans up by sender</strong></td><td>Tag or trash everything from one sender in a period, with the exact count shown first.</td></tr>
+          <tr><td><strong>Empties the Trash</strong></td><td>One click, permanent, with a confirmation.</td></tr>
+          <tr><td><strong>Several accounts</strong></td><td>Gmail and Outlook side by side, one Jev key for all of them.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Nothing happens on its own.</strong> Every action needs your click and shows the exact number of emails first. Starred (Gmail) and flagged (Outlook) emails are never touched. Deleting goes to Trash first (30 days), unless you empty it.</p>
+
+      <h2>Private by design</h2>
+      <p>There is no EmailHandler server. Everything runs on your computer:</p>
+      <ul>
+        <li>Your mailbox is called directly with your own sign-in (Google or Microsoft).</li>
+        <li>Jev is called directly with your own TypeSafe key.</li>
+        <li>Sign-in tokens and the remembered Jev key are encrypted with the OS keychain (Keychain, DPAPI, libsecret). On Linux without a keyring the app warns you that they only get basic protection.</li>
+        <li>Scan results stay in a local database, one per account. Email bodies are never stored.</li>
+      </ul>
+
+      <h2>Sign in</h2>
+      <p>Click <strong>Sign in with Google</strong> or <strong>Sign in with Microsoft</strong>. Your browser opens the provider's usual sign-in page; approve access and you're back in the app. That's it: no setup, no codes to copy.</p>
+      <table>
+        <thead><tr><th>Provider</th><th>Works with</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Google</strong></td><td>Gmail, Google Workspace</td></tr>
+          <tr><td><strong>Microsoft</strong></td><td>Outlook.com, Hotmail, Live, MSN, Microsoft 365</td></tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p><strong>During the beta</strong>, Google only lets invited testers sign in, and shows "Google hasn't verified this app": click <strong>Advanced → Go to EmailHandler</strong>. Microsoft may label the app "unverified". Both go away once the app is verified.</p>
+      </blockquote>
+
+      <h2>Develop</h2>
+      <p>Requires Node 24 (<code>nvm use</code>).</p>
+      <pre><code>npm install
+npm start          # Angular dev server on :4300 + Electron window
+npm test           # unit tests (SSRF guard, OAuth/PKCE, accounts, Graph mapping, unsubscribe)
+npm run test:it    # Outlook integration test inside Electron (fake Microsoft Graph)
+npm run typecheck  # UI (templates included) + Electron
+npm run app        # build, then run the built app
+npm run brand      # re-render icon, og-image and GitHub social preview from build/*.svg|html</code></pre>
+      <p>The technical documentation, with what every file and function does, is in <code>docs/TECHNICAL.md</code> (in the source code).</p>
+
+      <h3>Client IDs (developers only)</h3>
+      <p>Sign-in needs one free <strong>client ID</strong> per provider. It identifies the app, not the user, and is built into the app, so users never see it.</p>
+      <ol>
+        <li>Create them once: step-by-step guide (in Italian) in <code>docs/guida-client-id.html</code> (in the source code).</li>
+        <li>Put them in <code>oauth.config.json</code> at the repo root, following <code>oauth.config.example.json</code>. The file is gitignored and bundled into every build.</li>
+        <li>For development you can use <code>EH_GOOGLE_CLIENT_ID</code>, <code>EH_GOOGLE_CLIENT_SECRET</code> and <code>EH_MICROSOFT_CLIENT_ID</code> instead.</li>
+      </ol>
+      <p>A build without a client ID shows that provider's button greyed out ("Sign-in isn't available in this build").</p>
+
+      <h2>Build installers (free, unsigned)</h2>
+      <pre><code>npm run dist:mac     # .dmg + .zip (arm64, x64), ad-hoc signed
+npm run dist:win     # NSIS installer (x64, arm64), unsigned
+npm run dist:linux   # AppImage + .deb (x64, arm64)
+npm run pack         # unpacked app for the current OS, for testing</code></pre>
+      <p>Output goes to <code>release/</code>. Building each OS on its own machine works best, for example on free GitHub Actions runners.</p>
+      <p>Since there is no paid code-signing certificate, the first launch needs one extra step:</p>
+      <ul>
+        <li><strong>macOS:</strong> open the app once, then <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>. Or run <code>xattr -dr com.apple.quarantine /Applications/EmailHandler.app</code>.</li>
+        <li><strong>Windows:</strong> at "Windows protected your PC", click <strong>More info → Run anyway</strong>.</li>
+        <li><strong>Linux:</strong> <code>chmod +x EmailHandler-*.AppImage</code>, or install the <code>.deb</code>.</li>
+      </ul>
+
+      <h2>Layout</h2>
+      <pre><code>electron/   main process: frameless window, app:// protocol + CSP, IPC,
             sign-in (Google + Microsoft), Gmail + Microsoft Graph, Jev,
             one-click unsubscribe (SSRF guard), encrypted secrets
 src/        Angular UI (setup + app), EN/IT; talks to electron/ only via window.emailHandler
 build/      icon, share image, macOS entitlements
 tools/      brand image renderer
 docs/       technical documentation + client ID guide
-landing/    archived web landing page (not built)
-</code></pre>
-<p align="center"><sub>Made with ☕ and a lot of unsubscribe links. Powered by <a href="https://typesafe.ai" rel="nofollow">Jev</a>.</sub></p>
-      </main>
+landing/    archived web landing page (not built)</code></pre>
+    </main>
 
-      <footer>
-        <span>© 2026 EmailHandler</span>
-        <a href="./">Download</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </footer>
-    </div>
+    <footer class="night site-footer">
+      <div class="container">
+        <div>
+          <a class="brand" href="./"><img src="assets/icon.svg" alt="" width="44" height="44" /><span>Email<span class="hot">Handler</span></span></a>
+          <p>Made with coffee and a lot of unsubscribe links. Powered by <a href="https://typesafe.ai">Jev</a>.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="./#download">Download</a>
+          <a href="readme.html">README</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:bydamiano07@gmail.com">Contact</a>
+        </nav>
+        <small>© 2026 Damiano Maka</small>
+      </div>
+    </footer>
   </body>
 </html>

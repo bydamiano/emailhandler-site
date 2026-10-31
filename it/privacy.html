@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="it" data-alt="../privacy.html">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../lang.js"></script>
+    <title>Informativa sulla privacy · EmailHandler</title>
+    <meta name="description" content="A cosa accede EmailHandler nella tua casella di posta, perché, dove vanno i dati e come rimuoverli." />
+    <link rel="canonical" href="https://bydamiano.github.io/emailhandler-site/it/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://bydamiano.github.io/emailhandler-site/privacy.html" />
+    <link rel="alternate" hreflang="it" href="https://bydamiano.github.io/emailhandler-site/it/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://bydamiano.github.io/emailhandler-site/privacy.html" />
+    <meta name="theme-color" content="#fff8ef" />
+    <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Geist+Mono:wght@400..700&family=Geist:wght@400..700&display=swap" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <a class="skip btn btn-go" href="#main">Vai al contenuto</a>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="./" aria-label="EmailHandler, pagina iniziale">
+          <img src="../assets/icon.svg" alt="" width="44" height="44" />
+          <span>Email<span class="hot">Handler</span></span>
+        </a>
+        <nav class="nav" aria-label="Sito">
+          <a href="./#levels">Come funziona</a>
+          <a href="./#powerups">Potenziamenti</a>
+          <a href="./#faq">FAQ</a>
+          <a href="readme.html">README</a>
+          <a href="privacy.html" aria-current="page">Privacy</a>
+        </nav>
+        <div class="hdr-end">
+          <nav class="lang" aria-label="Lingua">
+            <a href="../privacy.html" hreflang="en" lang="en" data-lang="en">EN</a>
+            <a href="privacy.html" hreflang="it" lang="it" data-lang="it" aria-current="true">IT</a>
+          </nav>
+          <a class="btn btn-go btn-sm" href="./#download">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+            <span class="label">Scarica</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="doc">
+      <p class="eyebrow">Note legali</p>
+      <h1>Informativa sulla privacy</h1>
+      <p class="meta">Ultimo aggiornamento: 31 ottobre 2026</p>
+      <p class="lead">
+        EmailHandler è un'app desktop (macOS, Windows, Linux) che ti aiuta a organizzare e ripulire la tua casella di posta.
+        Funziona sul tuo computer. Non esiste un server di EmailHandler: lo sviluppatore non riceve mai le tue email, i token del tuo account o la tua chiave API.
+      </p>
+      <p class="meta">In caso di differenze tra questa traduzione e la <a href="../privacy.html">versione inglese</a>, vale la versione inglese.</p>
+
+      <section class="card">
+        <h2>Chi siamo</h2>
+        <p>EmailHandler è sviluppata da Damiano Maka, sviluppatore indipendente. Contatto: <a href="mailto:bydamiano07@gmail.com">bydamiano07@gmail.com</a>.</p>
+      </section>
+
+      <section class="card">
+        <h2>A cosa accede l'app</h2>
+        <p>Quando accedi, il tuo provider di posta ti chiede di concedere questi permessi. L'app legge il tuo indirizzo email solo per mostrare quale account è collegato.</p>
+        <ul>
+          <li><strong>Gmail:</strong> <code>gmail.modify</code>, per leggere email ed etichette, aggiungere o togliere etichette, spostare email nel Cestino e inviare email di disiscrizione. Il permesso di eliminare email per sempre (<code>https://mail.google.com/</code>) viene chiesto a parte, solo se scegli “Svuota cestino”.</li>
+          <li><strong>Outlook, Hotmail, Live, Microsoft 365:</strong> <code>Mail.ReadWrite</code>, <code>Mail.Send</code>, <code>MailboxSettings.ReadWrite</code> (per creare categorie colorate), <code>User.Read</code>, più <code>openid</code>, <code>email</code> e <code>offline_access</code> per restare collegato.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Come vengono usati</h2>
+        <p>Solo per offrirti le funzioni che vedi: etichettare le email, trovare le iscrizioni, suggerire cosa puoi eliminare ed eseguire le azioni che approvi. EmailHandler non modifica mai la tua casella senza un tuo clic.</p>
+        <p>
+          Per capire cos'è un'email, l'app invia parte del suo contenuto a <strong>Jev</strong>, un modello decisionale gestito da TypeSafe (<a href="https://typesafe.ai">typesafe.ai</a>):
+          mittente, oggetto, data, cartella, informazioni sulla mailing list e la breve anteprima oppure fino a 3.000 caratteri del testo.
+          Per valutare un mittente nel suo insieme invia oggetti e brevi anteprime (fino a 200 caratteri ciascuna) di un massimo di 8 email recenti.
+          Queste richieste vanno direttamente dal tuo computer a TypeSafe, usando la <strong>tua</strong> chiave API TypeSafe. Il trattamento di questi dati da parte di TypeSafe è regolato dai suoi termini e dalla sua informativa sulla privacy.
+        </p>
+        <p>Quando ti disiscrivi, l'app invia dal tuo computer la richiesta ufficiale di disiscrizione con un clic all'indirizzo pubblicato dal mittente, oppure invia dal tuo account un'email di disiscrizione all'indirizzo pubblicato dal mittente, a seconda di cosa supporta il mittente.</p>
+      </section>
+
+      <section class="card">
+        <h2>Cosa viene salvato, e dove</h2>
+        <ul>
+          <li><strong>Solo sul tuo computer.</strong> I risultati delle scansioni (mittente, oggetto, anteprima, etichette e risposte di Jev) restano nel database locale dell'app, così le scansioni successive sono veloci. Il testo delle email non viene salvato.</li>
+          <li>I token di accesso e la tua chiave API TypeSafe sono cifrati con l'archivio sicuro del sistema operativo (Portachiavi di macOS, DPAPI di Windows o il secret service di Linux).</li>
+          <li>L'app non ha analytics, tracciamento né telemetria. Lo sviluppatore non ha server e non riceve dati dall'app.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Norme sui dati utente dei servizi API di Google</h2>
+        <p>L'uso e il trasferimento ad altre app, da parte di EmailHandler, delle informazioni ricevute dalle API di Google rispettano le <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, inclusi i requisiti di uso limitato (Limited Use).</p>
+        <p>Per ogni provider: i dati della casella non vengono usati per pubblicità, non vengono venduti e non vengono usati dallo sviluppatore per addestrare modelli di AI o machine learning. Vengono condivisi solo con TypeSafe, come descritto sopra, per offrire le funzioni dell'app.</p>
+      </section>
+
+      <section class="card">
+        <h2>Le tue scelte</h2>
+        <ul>
+          <li>Puoi rimuovere un account dall'app in qualsiasi momento: i suoi risultati locali vengono eliminati e il suo token di accesso viene revocato.</li>
+          <li>Puoi anche revocare l'accesso dal tuo provider: <a href="https://myaccount.google.com/permissions">Google</a>, <a href="https://account.live.com/consent/Manage">Microsoft (account personali)</a> o <a href="https://myapps.microsoft.com">Microsoft (lavoro o scuola)</a>.</li>
+          <li>Disinstallare l'app ed eliminare la sua cartella dati rimuove tutto ciò che ha salvato.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Minori</h2>
+        <p>EmailHandler non è destinata a minori di 16 anni.</p>
+      </section>
+
+      <section class="card">
+        <h2>Modifiche e contatti</h2>
+        <p>Se questa informativa cambia, la data in alto viene aggiornata. Domande o richieste: <a href="mailto:bydamiano07@gmail.com">bydamiano07@gmail.com</a>.</p>
+      </section>
+    </main>
+
+    <footer class="night site-footer">
+      <div class="container">
+        <div>
+          <a class="brand" href="./"><img src="../assets/icon.svg" alt="" width="44" height="44" /><span>Email<span class="hot">Handler</span></span></a>
+          <p>Fatto con caffè e tanti link di disiscrizione. Funziona con <a href="https://typesafe.ai">Jev</a>.</p>
+        </div>
+        <nav aria-label="Piè di pagina">
+          <a href="./#download">Scarica</a>
+          <a href="readme.html">README</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Termini</a>
+          <a href="mailto:bydamiano07@gmail.com">Contatti</a>
+        </nav>
+        <small>© 2026 Damiano Maka</small>
+      </div>
+    </footer>
+  </body>
+</html>

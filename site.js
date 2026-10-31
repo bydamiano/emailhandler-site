@@ -6,6 +6,26 @@
   const RELEASES = 'https://github.com/bydamiano/emailhandler-site/releases/latest/download/';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  const TEXT = {
+    en: {
+      levels: ['Inbox Rookie', 'Tag Apprentice', 'Unsubscribe Ninja', 'Trash Wizard', 'Inbox Legend'],
+      levelUp: (name) => `Level up! ${name}`,
+      downloadFor: (label) => `Download for ${label}`,
+      phone: 'Get it for your computer',
+      downloads: (mac) => (mac ? 'your Downloads folder' : 'your downloads'),
+      toast: (label, where) => `Downloading EmailHandler for ${label}. Check ${where}, then follow the quest log.`,
+    },
+    it: {
+      levels: ['Recluta della posta', 'Apprendista delle etichette', 'Ninja delle disiscrizioni', 'Mago del cestino', 'Leggenda della inbox'],
+      levelUp: (name) => `Nuovo livello! ${name}`,
+      downloadFor: (label) => `Scarica per ${label}`,
+      phone: 'Scaricalo sul computer',
+      downloads: (mac) => (mac ? 'la cartella Download' : 'i tuoi download'),
+      toast: (label, where) => `Download di EmailHandler per ${label} avviato. Controlla ${where}, poi segui il diario delle missioni.`,
+    },
+  };
+  const t = TEXT[document.documentElement.lang] ?? TEXT.en;
+
   // ---------- Which computer is this? ----------
 
   async function detectOs() {
@@ -55,7 +75,7 @@
     const os = await detectOs();
     if (os === 'mobile') {
       document.getElementById('phone-note').hidden = false;
-      heroText.textContent = 'Get it for your computer';
+      heroText.textContent = t.phone;
       return;
     }
     const card = platforms.find((p) => p.dataset.os === os);
@@ -65,14 +85,14 @@
     heroDownload.href = RELEASES + card.dataset.file;
     heroDownload.dataset.download = '';
     heroDownload.dataset.label = card.dataset.label;
-    heroText.textContent = `Download for ${card.dataset.label}`;
+    heroText.textContent = t.downloadFor(card.dataset.label);
   }
 
   // ---------- Poke the envelope for XP ----------
 
   const XP_PER_POKE = 10;
   const XP_PER_LEVEL = 50;
-  const LEVEL_NAMES = ['Inbox Rookie', 'Tag Apprentice', 'Unsubscribe Ninja', 'Trash Wizard', 'Inbox Legend'];
+  const LEVEL_NAMES = t.levels;
   const hud = {
     level: document.getElementById('hud-level'),
     name: document.getElementById('hud-name'),
@@ -105,7 +125,7 @@
     const name = renderXp();
     if (!reduceMotion.matches) replay(pop);
     if (xp % XP_PER_LEVEL === 0) {
-      levelUp.textContent = `Level up! ${name}`;
+      levelUp.textContent = t.levelUp(name);
       replay(levelUp);
     }
   });
@@ -120,8 +140,7 @@
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[data-download]');
     if (!link || !link.href.includes('/releases/')) return;
-    const where = /Mac/i.test(navigator.userAgent) ? 'your Downloads folder' : 'your downloads';
-    toastText.textContent = `Downloading EmailHandler for ${link.dataset.label}. Check ${where}, then follow the quest log.`;
+    toastText.textContent = t.toast(link.dataset.label, t.downloads(/Mac/i.test(navigator.userAgent)));
     toast.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('show'), 6000);
