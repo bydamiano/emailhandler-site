@@ -1,0 +1,57 @@
+/* Same tokens as the app (src/styles.css). */
+:root {
+  color-scheme: light dark;
+  --bg: #fbf7f0; --elev: #ffffff; --sunk: #f2ebdf;
+  --ink: #1f1b2d; --ink-2: #5d576c;
+  --line: rgb(31 27 45 / 0.09); --line-strong: rgb(31 27 45 / 0.17); --edge: rgb(31 27 45 / 0.13);
+  --accent: #ff6a3d; --accent-edge: #d9481f; --accent-text: #c23b15;
+  --sun: #ffc23d; --mint: #22b893; --sky: #3b9eff; --grape: #8f6bff;
+  --shadow: 0 2px 0 var(--edge), 0 18px 40px -24px rgb(31 27 45 / 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16131c; --elev: #211c2a; --sunk: #0f0d14;
+    --ink: #f6f2fc; --ink-2: #b9b1c9;
+    --line: rgb(246 242 252 / 0.08); --line-strong: rgb(246 242 252 / 0.16); --edge: rgb(0 0 0 / 0.5);
+    --accent: #ff7a50; --accent-edge: #c4532f; --accent-text: #ff9a78;
+    --sun: #ffcf5c; --mint: #4fd6b0; --sky: #6bb6ff; --grape: #a98dff;
+    --shadow: 0 2px 0 rgb(0 0 0 / 0.5), 0 18px 40px -20px rgb(0 0 0 / 0.7);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 17px/1.65 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--line-strong) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+.wrap { max-width: 780px; margin: 0 auto; padding: 32px 16px 80px; }
+header.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; font-weight: 800; font-size: 1.25rem; }
+.brand b { color: var(--accent-text); }
+.mark { width: 38px; height: 38px; border-radius: 12px; background: var(--accent); box-shadow: 0 3px 0 var(--accent-edge); display: grid; place-items: center; font-size: 1.2rem; }
+nav.links { display: flex; gap: 6px; flex-wrap: wrap; }
+nav.links a { text-decoration: none; color: var(--ink); padding: 6px 12px; border-radius: 999px; font-size: 0.95rem; }
+nav.links a:hover, nav.links a[aria-current="page"] { background: var(--sunk); }
+h1, h2 { font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.4rem); font-weight: 800; margin: 0 0 12px; letter-spacing: -0.035em; }
+h2 { font-size: 1.45rem; font-weight: 800; margin: 0 0 10px; }
+.lead { font-size: 1.15rem; color: var(--ink-2); margin: 0; max-width: 60ch; }
+.meta { color: var(--ink-2); font-size: 0.92rem; margin: 0 0 8px; }
+.card { background: var(--elev); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); padding: 24px clamp(18px, 4vw, 30px); margin-top: 22px; }
+.card p, .card li { color: var(--ink); }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+ul { padding-left: 1.2rem; }
+li { margin-bottom: 6px; }
+a { color: var(--accent-text); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em; background: var(--sunk); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 22px; }
+.feature { background: var(--elev); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); padding: 18px; }
+.feature h2 { font-size: 1.1rem; margin-top: 10px; }
+.feature p { margin: 0; color: var(--ink-2); font-size: 0.97rem; }
+.tile { width: 38px; height: 38px; border-radius: 12px; display: inline-grid; place-items: center; font-size: 1.1rem; box-shadow: 0 2px 0 var(--edge); }
+.t-sun { background: var(--sun); } .t-sky { background: var(--sky); } .t-mint { background: var(--mint); } .t-grape { background: var(--grape); }
+footer { margin-top: 48px; color: var(--ink-2); font-size: 0.92rem; display: flex; gap: 16px; flex-wrap: wrap; }
